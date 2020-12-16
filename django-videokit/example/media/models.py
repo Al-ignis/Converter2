@@ -39,10 +39,10 @@ class MediaItem(models.Model):
     def converter(self): 	   
         name1 = 'media-uploads/' + self.video.name 
         name2 =  name1[26:]    
-        command1 = 'ffmpeg -i ./'+ name1 +' -vf scale=640:480 -strict -2 ./media-uploads/'+ name2 + ' &'
+        command1 = 'ffmpeg -i ./'+ name1 +' -vf scale=640:480 -strict -2 ./media-uploads/media_converted/'+ name2 + ' &'
         #command2 = 'pwd &>output1234.txt; pwd &>output1234.txt'
-        f = open(name2 +'_input.txt', 'w')
-        f1 = open(name2+'_output.txt', 'w')
+        f = open('./media-uploads/txt_for_checking/'+name2 +'_input.txt', 'w')
+        f1 = open('./media-uploads/txt_for_checking/'+name2+'_output.txt', 'w')
         print(name1)
         print(name2)
         response = subprocess.Popen(command1, shell = True, stdout = f, stderr = f1)
