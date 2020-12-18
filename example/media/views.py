@@ -30,8 +30,8 @@ def item_create(request):
             if video:
                 media_item = MediaItem(video = video)
                 media_item.save()
-                media_item.video_mp4.generate()
-                media_item.video_ogg.generate()
+                #media_item.video_mp4.generate()
+                #media_item.video_ogg.generate()
                 media_item.converter()
                 return HttpResponseRedirect(reverse('list'))
 

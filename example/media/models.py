@@ -43,8 +43,8 @@ class MediaItem(models.Model):
         #command2 = 'pwd &>output1234.txt; pwd &>output1234.txt'
         f = open('./media-uploads/txt_for_checking/'+name2 +'_input.txt', 'w')
         f1 = open('./media-uploads/txt_for_checking/'+name2+'_output.txt', 'w')
-        print(name1)
-        print(name2)
+        #print(name1)
+        #print(name2)
         response = subprocess.Popen(command1, shell = True, stdout = f, stderr = f1)
 	
         return False
